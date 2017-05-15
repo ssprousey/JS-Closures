@@ -207,7 +207,9 @@ var secondLevelFriends = ["Anne", "Harry", "Quinton"];
 var allUsers = ["Tom", "Dick", "Harry", "Anne", "Quinton", "Katie", "Mary"];
 
 function findPotentialFriends(existingFriends) {
-
+  return function (x) {
+    return existingFriends.indexOf(x) == -1;
+  }
 }
 
 var isNotAFriend = findPotentialFriends( friends );
@@ -247,10 +249,13 @@ to 5. What we need to do is console.log(i) so that it logs like so:
  */
 
 function timeOutCounter() {
+  var func = function(x) {
+  console.log(x);
+  };
+
   for (var i = 0; i <= 5; i++) {
-    setTimeout(function() {
-    	console.log(i)
-	}, i * 1000)
+  setTimeout(func(i), 1000 * i)
   }
-}
+
+  }
 timeOutCounter();
