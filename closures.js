@@ -212,7 +212,7 @@ function findPotentialFriends(existingFriends) {
   }
 }
 
-var isNotAFriend = findPotentialFriends( friends );
+var isNotAFriend = findPotentialFriends(friends);
 // isNotAFriend(allUsers[0]); // false
 // isNotAFriend(secondLevelFriends[2]); // true
 
