@@ -248,14 +248,14 @@ to 5. What we need to do is console.log(i) so that it logs like so:
  Fix the code below to log the desired output.
  */
 
-function timeOutCounter() {
-  var func = function(x) {
-  console.log(x);
-  };
-
-  for (var i = 0; i <= 5; i++) {
-  setTimeout(func(i), 1000 * i)
-  }
-
-  }
-timeOutCounter();
+ function timeOutCounter() {
+   for (var i = 0; i <= 5; i++) {
+     function invokeMe(index) {
+       setTimeout(function() {
+         console.log(index)
+       }, index * 1000);
+     }
+     invokeMe(i)
+   }
+ }
+ timeOutCounter();
